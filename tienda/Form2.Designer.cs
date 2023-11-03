@@ -105,8 +105,11 @@
             // dgvcarrito
             // 
             this.dgvcarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcarrito.EnableHeadersVisualStyles = false;
+            this.dgvcarrito.GridColor = System.Drawing.Color.White;
             this.dgvcarrito.Location = new System.Drawing.Point(61, 194);
             this.dgvcarrito.Name = "dgvcarrito";
+            this.dgvcarrito.RowHeadersVisible = false;
             this.dgvcarrito.Size = new System.Drawing.Size(627, 150);
             this.dgvcarrito.TabIndex = 11;
             // 
@@ -121,6 +124,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

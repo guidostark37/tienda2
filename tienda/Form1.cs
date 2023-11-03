@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace tienda
 {
+   
     public partial class Form1 : Form
+      
     {
-        tiendaEntities2 db = new tiendaEntities2 ();    
+        
         public Form1()
         {
             InitializeComponent();
@@ -36,15 +38,14 @@ namespace tienda
         {
             using (tiendaEntities2 db = new tiendaEntities2())
             {
-                var query = (from producto in db.Productos
-                            select producto).ToList();
+                var query = (from productos in db.Productos select productos).ToList();
                 flowLayoutPanel1.Controls.Clear();
                 foreach (var item in query)
                 {
                     flowLayoutPanel1.Controls.Add(new UserControl1(item));
-
+                   
                 }
-
+                
             }
         }
 
@@ -62,5 +63,7 @@ namespace tienda
             this.Hide();
             form3.Show();
         }
+
+        
     }
 }

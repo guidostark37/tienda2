@@ -47,8 +47,18 @@ namespace tienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
            
+           
+
+        }
+
+        private void UserControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            var dif = e.X;
+            if (dif != 0) {
+                
+
+            }
         }
     }
 }

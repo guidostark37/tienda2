@@ -22,17 +22,5 @@ namespace tienda.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dfs")]
-        public string Carrito {
-            get {
-                return ((string)(this["Carrito"]));
-            }
-            set {
-                this["Carrito"] = value;
-            }
-        }
     }
 }

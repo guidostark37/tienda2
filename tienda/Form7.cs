@@ -19,25 +19,47 @@ namespace tienda
         }
 
 
-        public Form7(int pid)
+        public Form7(int id)
         {
             InitializeComponent();
-            //buscar(pid);
+            buscar(id);
         }
         private void label1_Click(object sender, EventArgs e)
         {
            
         }
-        public void editar(int pid) { 
-            
+        public void editar() {
+
+            using (tiendaEntities2 db = new tiendaEntities2())
+            {
+                Productos p =  new Productos();
+                var query= db.Productos.Find(int.Parse(label6.Text));
+                db.Productos.Remove(query);
+                p.name = txtnombre.Text;
+                p.precio_unidad = int.Parse(txtprecio.Text);
+                p.stock = int.Parse(txtstock.Text);
+                byte[] file = null;
+                Stream stream = openFileDialog1.OpenFile();
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    stream.CopyTo(ms);
+                    file = ms.ToArray();
+                }
+                p.imagen = file;
+                db.Productos.Add(p);
+                db.SaveChanges();
+
+
+            }
         }
-        public void buscar(int pid)
+        public void buscar(int id)
         {
             try
             {
                 using (tiendaEntities2 db = new tiendaEntities2()) {
 
-                    var query = db.Productos.Where(p => p.id == pid).ToList();
+                    var query = db.Productos.Where(p => p.id == id).ToList();
 
                     if (query.Count > 0)
                     {
@@ -46,6 +68,9 @@ namespace tienda
                             txtnombre.Text = producto.name;
                             txtprecio.Text = producto.precio_unidad.ToString();
                             txtstock.Text = producto.stock.ToString();
+                            label6.Text = producto.id.ToString();
+
+
                             MemoryStream ms = new MemoryStream(producto.imagen);
                             Bitmap bitmap = new Bitmap(ms);
                             pictureBox2.Image = bitmap;
@@ -66,23 +91,7 @@ namespace tienda
         Productos producto = new Productos();
 
 
-        public void editar(Productos producto)
-        {
-            try
-            {
-                using (tiendaEntities2 db = new tiendaEntities2())
-                {
-
-                    db.Entry(producto).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                }
-
-            } 
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         public void cargardatos()
         {
@@ -116,9 +125,9 @@ namespace tienda
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            
+
             cargardatos();
-            editar(producto);
+            editar();
 
             Form4 form4 = new Form4();
             form4.Show();

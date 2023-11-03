@@ -27,15 +27,26 @@ namespace tienda
             Form1 form1 = new Form1();
             this.Hide();
             form1.Show();
-           
+
+
         }
         public void cargarcarrito()
         {
             ClsCarrito clsCarrito = new ClsCarrito();
+
+
+            dgvcarrito.ColumnCount = 3;
+            dgvcarrito.Columns[0].Name = "producto";
+            dgvcarrito.Columns[1].Name = "producto";
+            dgvcarrito.Columns[2].Name = "producto";
            
+
 
         }
 
-
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
