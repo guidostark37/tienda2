@@ -50,7 +50,7 @@ namespace tienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var confirma = "";
+            var confirma = false;
             var indice = 0;
             ClsCarrito cls = new ClsCarrito();
             cls.id = id;
@@ -63,14 +63,14 @@ namespace tienda
             {
                 if (ClsCarrito.clsCarritos[i].nombre == cls.nombre)
                 {
-                    confirma = "si";
+                    confirma = true;
                     indice= i;
                 }
             }
 
-            if (confirma == "si")
+            if (confirma)
             {
-                MessageBox.Show("si esta");
+               
                 cls.cantidad = ClsCarrito.clsCarritos[indice].cantidad + 1;
                 cls.total = cls.precio * cls.cantidad;
                 ClsCarrito.clsCarritos[indice] = cls;

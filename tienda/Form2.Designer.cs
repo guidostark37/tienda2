@@ -134,6 +134,7 @@
             this.dgvcarrito.RowHeadersVisible = false;
             this.dgvcarrito.Size = new System.Drawing.Size(773, 241);
             this.dgvcarrito.TabIndex = 11;
+            this.dgvcarrito.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcarrito_CellClick);
             // 
             // Form2
             // 
