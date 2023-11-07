@@ -15,6 +15,7 @@ namespace tienda
     {
        
         List<ClsCarrito> CarritoList = new List<ClsCarrito>();
+        int id = 0;
         public UserControl1()
         {
             InitializeComponent();
@@ -34,7 +35,9 @@ namespace tienda
         }
 
         public void cargardatos(Productos productos)
-        {
+        {  
+           
+            id = productos.id;
             pictureBox1.Image = mostrar(productos.imagen);
             label1.Text = productos.name;
             label2.Text= productos.precio_unidad.ToString();
@@ -47,18 +50,45 @@ namespace tienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            var confirma = "";
+            var indice = 0;
+            ClsCarrito cls = new ClsCarrito();
+            cls.id = id;
+            cls.nombre = label1.Text;
+            cls.precio = float.Parse(label2.Text);
+            cls.cantidad = 1;
+            cls.total = cls.precio*cls.cantidad;
+
+            for (int i = 0; i < ClsCarrito.clsCarritos.Count; i++)
+            {
+                if (ClsCarrito.clsCarritos[i].nombre == cls.nombre)
+                {
+                    confirma = "si";
+                    indice= i;
+                }
+            }
+
+            if (confirma == "si")
+            {
+                MessageBox.Show("si esta");
+                cls.cantidad = ClsCarrito.clsCarritos[indice].cantidad + 1;
+                cls.total = cls.precio * cls.cantidad;
+                ClsCarrito.clsCarritos[indice] = cls;
+            }
+            else {
+                ClsCarrito.clsCarritos.Add(cls);
+            }
+            
            
 
         }
 
         private void UserControl1_MouseClick(object sender, MouseEventArgs e)
         {
-            var dif = e.X;
-            if (dif != 0) {
+          
                 
 
-            }
+            
         }
     }
 }

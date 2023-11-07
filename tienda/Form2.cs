@@ -12,8 +12,9 @@ namespace tienda
 {
     public partial class Form2 : Form
     {
+        public DataGridViewButtonColumn GB = new DataGridViewButtonColumn();
+        public DataGridViewButtonColumn GB2 = new DataGridViewButtonColumn();
 
-        
         public Form2()
         {
             InitializeComponent();
@@ -32,14 +33,21 @@ namespace tienda
         }
         public void cargarcarrito()
         {
-            ClsCarrito clsCarrito = new ClsCarrito();
-
-
-            dgvcarrito.ColumnCount = 3;
-            dgvcarrito.Columns[0].Name = "producto";
-            dgvcarrito.Columns[1].Name = "producto";
-            dgvcarrito.Columns[2].Name = "producto";
+            
            
+            dgvcarrito.DataSource = ClsCarrito.clsCarritos;
+
+            GB.Name = "Agregar";
+            GB.Text = "Agregar";
+            GB.UseColumnTextForButtonValue = true;
+            GB.DefaultCellStyle.BackColor = Color.Green;
+            dgvcarrito.Columns.Add(GB);
+
+            GB2.Name = "Eliminar";
+            GB2.Text = "Eliminar";
+            GB2.UseColumnTextForButtonValue = true;
+            GB2.DefaultCellStyle.BackColor = Color.Red;
+            dgvcarrito.Columns.Add(GB2);
 
 
         }
