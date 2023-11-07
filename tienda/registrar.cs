@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace tienda
 {
-    public partial class Form6 : Form
+    public partial class Registrar : Form
     {
-        public Form6()
+        public Registrar()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace tienda
         private void btnguardar_Click(object sender, EventArgs e)
         {
             guardar();
-            Form3 form3 = new Form3();
+            Login form3 = new Login();
             this.Hide();
             form3.Show();
             

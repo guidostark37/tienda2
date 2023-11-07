@@ -1,6 +1,6 @@
 ﻿namespace tienda
 {
-    partial class Form6
+    partial class Registrar
     {
         /// <summary>
         /// Required designer variable.

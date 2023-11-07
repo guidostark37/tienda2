@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace tienda
 {
-    public partial class Form3 : Form
+    public partial class Login : Form
     {
-        public Form3()
+        public Login()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace tienda
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6();
+            Registrar form6 = new Registrar();
             this.Hide();
             form6.Show();
         }
@@ -53,14 +53,14 @@ namespace tienda
 
                     if (query.Count() > 0) {
                        
-                        Form4 form4 = new Form4();
+                        Stock form4 = new Stock();
                         this.Hide();
                         form4.Show();
 
                     }
                     else
                     {
-                        Form1 form1 = new Form1();
+                        Tienda form1 = new Tienda();
                         this.Hide();
                         
                         form1.Show();
@@ -76,7 +76,7 @@ namespace tienda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Tienda form1 = new Tienda();
             this.Hide();
             form1.Show();
         }

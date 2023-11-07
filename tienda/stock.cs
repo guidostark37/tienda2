@@ -11,9 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace tienda
 {
-    public partial class Form4 : Form
+    public partial class Stock : Form
     {
-        public Form4()
+        public Stock()
         {
             InitializeComponent();
             mostrar();
@@ -59,14 +59,14 @@ namespace tienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
+            AgregarProducto form5 = new AgregarProducto();
             this.Hide();
             form5.Show();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Tienda form1 = new Tienda();
             this.Hide();
             form1.Show();
         }
@@ -94,7 +94,7 @@ namespace tienda
             {
                 id =int.Parse(dgvProductos.CurrentRow.Cells["id"].Value.ToString());
               
-                Form7 F7 = new Form7(id);    
+                Editar F7 = new Editar(id);    
                 F7.Show();
                 this.Hide();
                

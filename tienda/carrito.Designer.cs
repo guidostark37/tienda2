@@ -1,6 +1,6 @@
 ﻿namespace tienda
 {
-    partial class Form2
+    partial class Carrito
     {
         /// <summary>
         /// Required designer variable.

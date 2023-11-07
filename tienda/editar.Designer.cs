@@ -1,6 +1,6 @@
 ﻿namespace tienda
 {
-    partial class Form7
+    partial class Editar
     {
         /// <summary>
         /// Required designer variable.

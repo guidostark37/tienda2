@@ -1,6 +1,6 @@
 ﻿namespace tienda
 {
-    partial class Form5
+    partial class AgregarProducto
     {
         /// <summary>
         /// Required designer variable.

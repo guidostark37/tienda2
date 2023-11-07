@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace tienda
 {
-    public partial class Form2 : Form
+    public partial class Carrito : Form
     {
         public DataGridViewButtonColumn GB = new DataGridViewButtonColumn();
         public DataGridViewButtonColumn GB2 = new DataGridViewButtonColumn();
         List<ClsCarrito> remplazo = new List<ClsCarrito>();
 
-        public Form2()
+        public Carrito()
         {
             InitializeComponent();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Tienda form1 = new Tienda();
             this.Hide();
             form1.Show();
 

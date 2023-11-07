@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace tienda
 {
-    public partial class Form5 : Form
+    public partial class AgregarProducto : Form
     {
-        public Form5()
+        public AgregarProducto()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace tienda
         private void btnguardar_Click(object sender, EventArgs e)
         {
             guardar();
-            Form4 form4 = new Form4();
+            Stock form4 = new Stock();
             this.Hide();
             form4.Show();
         }
@@ -81,7 +81,7 @@ namespace tienda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
+            Stock form4 = new Stock();
             this.Hide();
             form4.Show();
         }

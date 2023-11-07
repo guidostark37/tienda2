@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace tienda
 {
    
-    public partial class Form1 : Form
+    public partial class Tienda : Form
       
     {
         
-        public Form1()
+        public Tienda()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace tienda
 
         private void btncarrito_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Carrito form2 = new Carrito();
             this.Hide();
             form2.Show();
           
@@ -59,7 +59,7 @@ namespace tienda
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Login form3 = new Login();
             this.Hide();
             form3.Show();
         }

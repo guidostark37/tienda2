@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace tienda
 {
-    public partial class Form7 : Form
+    public partial class Editar : Form
     {
-        public Form7()
+        public Editar()
         {
             InitializeComponent();
         }
 
 
-        public Form7(int id)
+        public Editar(int id)
         {
             InitializeComponent();
             buscar(id);
@@ -129,7 +129,7 @@ namespace tienda
             cargardatos();
             editar();
 
-            Form4 form4 = new Form4();
+            Stock form4 = new Stock();
             form4.Show();
             this.Close();
         }

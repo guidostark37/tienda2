@@ -1,6 +1,6 @@
 ﻿namespace tienda
 {
-    partial class Form4
+    partial class Stock
     {
         /// <summary>
         /// Required designer variable.
@@ -160,7 +160,7 @@
             this.dgvProductos.TabIndex = 14;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
-            // Form4
+            // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +169,9 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Name = "Stock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
